@@ -1,0 +1,7 @@
+{% include 'master.html' %}
+<h2>Categories</h2>
+<ul>
+    {% for category in categories %}
+        <li>{{ category.name }}</li>
+    {% endfor %}
+</ul>

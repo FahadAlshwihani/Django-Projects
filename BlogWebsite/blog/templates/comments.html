@@ -1,0 +1,7 @@
+{% include 'master.html' %}
+<h2>Comments</h2>
+<ul>
+    {% for comment in comments %}
+        <li>{{ comment.content }} (Post ID: {{ comment.post.id }})</li>
+    {% endfor %}
+</ul>
