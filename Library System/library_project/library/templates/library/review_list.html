@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review List</title>
+</head>
+<body>
+    <h1>Reviews</h1>
+    <ul>
+        {% for review in object_list %}
+            <li>
+                <strong>{{ review.book.title }}</strong> by {{ review.member.user.username }}:
+                {{ review.rating }} - {{ review.comment }}
+            </li>
+        {% empty %}
+            <li>No reviews available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
