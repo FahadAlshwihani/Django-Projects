@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member List</title>
+</head>
+<body>
+    <h1>Members</h1>
+    <a href="{% url 'member_create' %}">Add New Member</a>
+    <ul>
+        {% for member in object_list %}
+            <li>{{ member.user.username }} - Member since {{ member.membership_date }}</li>
+        {% empty %}
+            <li>No members available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
